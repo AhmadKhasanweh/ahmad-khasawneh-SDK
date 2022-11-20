@@ -24,9 +24,9 @@ export class Character {
     }
     /**
      * List of characters including metadata like name, gender, realm, race and more.
-     * @returns Character[]
+     * @returns {Character[]}
      */
-     getCharacter(): Promise<Character[]> {
+     getCharacters(): Promise<Character[]> {
         return new Promise((resolve, reject) => {
             this._axiosInstance
             .get(`/character`)
@@ -39,7 +39,8 @@ export class Character {
 
     /**
      * Request one specific character.
-     * @returns Character
+     * @param {string} - character id 
+     * @returns {Character}
      */
     getCharacterById(id: string): Promise<Character> {
         return new Promise((resolve, reject) => {
@@ -54,7 +55,8 @@ export class Character {
 
     /**
      * Request all movie quotes of one specific character.
-     * @returns Character
+     * @param {string} - character id
+     * @returns {Character}
      */
     getQoutesByCharacterId(id: string): Promise<Character> {
         return new Promise((resolve, reject) => {

@@ -34,8 +34,9 @@ export class Book {
     }
 
     /**
-     * Request one specific book
-     * @returns Book
+     * Request one specific book.
+     * @param {string} - book id
+     * @returns {Book}
      */
     getBookById(id: string): Promise<Book> {
         return new Promise((resolve, reject) => {
@@ -49,8 +50,9 @@ export class Book {
     }
 
     /**
-     * Request all chapters of one specific book
-     * @returns Chapter[]
+     * Request all chapters of one specific book.
+     * @param {string} - book id
+     * @returns {Chapter[]}
      */
     getChapterById(id: string): Promise<Chapter> {
         return new Promise((resolve, reject) => {

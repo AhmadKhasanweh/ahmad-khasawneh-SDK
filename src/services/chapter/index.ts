@@ -16,7 +16,7 @@ export class Chapter {
     }
     /**
      * List of all chapters.
-     * @returns Chapter[]
+     * @returns {Chapter[]} 
      */
      getChapters(): Promise<Chapter[]> {
         return new Promise((resolve, reject) => {
@@ -31,7 +31,8 @@ export class Chapter {
 
     /**
      * Request one specific book chapter.
-     * @returns Chapter
+     * @param {string} - chapter id 
+     * @returns {Chapter}
      */
     getChapterById(id: string): Promise<Chapter> {
         return new Promise((resolve, reject) => {

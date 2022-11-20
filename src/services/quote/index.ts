@@ -18,7 +18,7 @@ export class Quote {
     }
     /**
      * List of all movie quotes.
-     * @returns Quote[]
+     * @returns {Quote[]}
      */
      getQuote(): Promise<Quote[]> {
         return new Promise((resolve, reject) => {
@@ -33,7 +33,8 @@ export class Quote {
 
     /**
      * Request one specific movie quote.
-     * @returns Quote
+     * @param {string} - quote id
+     * @returns {Quote}
      */
     getQuoteById(id: string): Promise<Quote> {
         return new Promise((resolve, reject) => {

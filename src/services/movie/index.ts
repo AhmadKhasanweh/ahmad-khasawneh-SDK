@@ -21,9 +21,9 @@ export class Movie {
     }
     /**
      * List of all movies, including the "The Lord of the Rings" and the "The Hobbit" trilogies.
-     * @returns Movie[]
+     * @returns {Movie[]}
      */
-     getMovie(): Promise<Movie[]> {
+     getMovies(): Promise<Movie[]> {
         return new Promise((resolve, reject) => {
             this._axiosInstance
             .get(`/movie`)
@@ -36,7 +36,8 @@ export class Movie {
 
     /**
      * Request one specific movie.
-     * @returns Movie
+     * @param {string} - movie id
+     * @returns {Movie}
      */
     getMovieById(id: string): Promise<Movie> {
         return new Promise((resolve, reject) => {
@@ -51,7 +52,8 @@ export class Movie {
 
     /**
      * Request all movie quotes of one specific Movie(only working for the LotR trilogy).
-     * @returns Movie
+     * @param {string} - movie id
+     * @returns {Movie}
      */
     getQoutesByMovieId(id: string): Promise<Movie> {
         return new Promise((resolve, reject) => {

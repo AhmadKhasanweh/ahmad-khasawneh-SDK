@@ -1,6 +1,6 @@
 {
   "name": "the-lord-of-the-rings-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A npm library to get the-open-api v2 resources through NodeJS SDK",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
