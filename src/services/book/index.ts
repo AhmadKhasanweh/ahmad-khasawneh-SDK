@@ -1,5 +1,4 @@
-import axios, { AxiosResponse } from 'axios';
-import { API_URL } from '../utils';
+import axios, { AxiosResponse, AxiosInstance } from 'axios';
 
 export interface Book {
     _id: string,
@@ -15,14 +14,18 @@ export interface Chapter {
  * Book class to construct a service book.
  */
 export class Book {
+    private _axiosInstance: AxiosInstance;
+    constructor(_axiosInstance: AxiosInstance) {
+        this._axiosInstance = _axiosInstance;
+    }
     /**
      * List of all "The Lord of the Rings" books.
-     * @returns Book
+     * @returns Book[]
      */
      getBooks(): Promise<Book[]> {
         return new Promise((resolve, reject) => {
-            axios
-            .get(`${API_URL}/book`)
+            this._axiosInstance
+            .get(`/book`)
             .then((response: AxiosResponse) => {
                 resolve(response.data.docs);
             })
@@ -36,8 +39,8 @@ export class Book {
      */
     getBookById(id: string): Promise<Book> {
         return new Promise((resolve, reject) => {
-            axios
-            .get(`${API_URL}/book/${id}`)
+            this._axiosInstance
+            .get(`/book/${id}`)
             .then((response: AxiosResponse) => {
                 resolve(response.data.docs);
             })
@@ -51,8 +54,8 @@ export class Book {
      */
     getChapterById(id: string): Promise<Chapter> {
         return new Promise((resolve, reject) => {
-            axios
-            .get(`${API_URL}/book/${id}/chapter`)
+            this._axiosInstance
+            .get(`/book/${id}/chapter`)
             .then((response: AxiosResponse) => {
                 resolve(response.data.docs);
             })
@@ -61,4 +64,4 @@ export class Book {
     }
 }
 
-export default new Book();
+export default Book;
