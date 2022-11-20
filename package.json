@@ -6,8 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "npm run test",
-    "prepare": "npm run build",
-    "build": "tsc"
+    "build": "npm run tsc",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
